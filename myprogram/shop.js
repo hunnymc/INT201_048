@@ -10,6 +10,7 @@ let coin1 = 0;
 function customer(price, cash) {
     this.price = price;
     this.cash = cash;
+}
 
 function money(price, cash) {
     change = cash - price;
