@@ -103,16 +103,20 @@ const sortbyRatingDesc = () => musicList.sort((a,b) => b.rating - a.rating);
 function findIndexByName(musicName) { //รับค่าชื่อเพลงที่หาลงใน musicName
 
     return musicName + ' is number ' + 
-            ( 1 + musicList.findIndex((music, index) => music.name.toLowerCase() === musicName.toLowerCase())) 
+            //ใช้ findindex() โดยใช้เงื่อนไขเมื่อ เพลงในlist === musicNameที่เรากำลังค้นหา โดนเปลี่ยนให้ทั้งคู่เป็นตัวเล็ก
+            //เพื่อเปรียบเทียบได้ง่ายขึ้น และทำการ +1 เพื่อให้ index เริ่มที่ 1
+            ( 1 + musicList.findIndex((music) => music.name.toLowerCase() === musicName.toLowerCase())) 
             + ' on playlist.'
+            //ผลลัพท์ที่ได้ 'musicName' is number X on playlist.
 
 }
 
 function findIndexByArtist(artistName) {
 
     return artistName + ' is number ' + 
-            ( 1 + musicList.findIndex((music, index) => music.artist.toLowerCase() === artistName.toLowerCase()))
+            ( 1 + musicList.findIndex((music) => music.artist.toLowerCase() === artistName.toLowerCase()))
              + ' on playlist.'
+             //ผลลัพท์ที่ได้ 'artistName' is number X on playlist.
 
 }
 
