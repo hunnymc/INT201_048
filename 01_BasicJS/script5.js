@@ -7,6 +7,8 @@ function greeter() {
   //msg is function scoped, we cannot access the variable msg outside of a function
   var msg = 'hello';
 }
+
+console.log(greeter);
 // console.log(msg); //error: msg is not defined
 console.log(greeting);
 
